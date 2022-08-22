@@ -1,0 +1,231 @@
+/* CSS RESET */
+
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+
+:root{
+  --number : #FFF8E5;
+  --operation : #FFB344;
+  --equal : #00A19D;
+  --clear : #E05D5D;
+}
+
+html{
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: Share Tech Mono, monospace;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #73A9AD;
+}
+
+#calculator-body{
+  width: 400px;
+  height: 500px;
+  padding: 10px;
+  background-color: black;
+}
+
+#screen{
+  width: 100%;
+  height: 80px;
+  border: 1px black solid;
+  border: none;
+  text-align: right;
+}
+
+#operation{
+  width: 100%;
+  height: 40%;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+  color: green;
+  font-size: 1.3em;
+  background-color: black;
+  border: none;
+}
+
+#display{
+  height: 70%;
+  width: 100%;
+  font-size: 2.7em;
+  color: #fff;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+  background-color: black;
+  border: none;
+}
+
+#calc-keys{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+button{
+  height: 80px;
+  background-color: #fff;
+  background-color: var(--number);
+  font-size: 2rem;
+  border: 0.5px black solid;
+  cursor: pointer;
+  color: black;
+  background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+  text-shadow: 0 1px rgba(255,255,255,.4);
+}
+
+button:hover{
+  border: 1px solid white;
+  font-size: 2.3rem;
+}
+
+button:active{
+  animation: animate-button-click 0.5s forwards;
+}
+
+@keyframes animate-button-click {
+  0%{
+    color: black;
+  }
+  50%{
+    color: yellow;
+  }
+  100%{
+    color: black;
+  }
+}
+
+#equals{
+  height: 100%;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  background-color: var(--equal);
+}
+#zero{
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#one{
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+#two{
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+#three{
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+#four{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+#five{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+#six{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+#seven{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+#eight{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+#nine{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4; 
+}
+#add{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  background-color: var(--operation);
+}
+#subtract{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  background-color: var(--operation);
+}
+#multiply{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  background-color: var(--operation);
+}
+#divide{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  background-color: var(--operation);
+}
+#decimal{
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+#clear{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: red;
+  background-color: var(--clear);
+}
+
+#credit{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: white;
+  margin-top: 1em;
+}
+
+#credit a{
+  text-decoration: none;
+  color: white;
+}
