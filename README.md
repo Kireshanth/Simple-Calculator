@@ -1,3 +1,3 @@
 # Simple Calculator Web App
 
-Built using css/js/react
+Built using css, javascript, and React.
